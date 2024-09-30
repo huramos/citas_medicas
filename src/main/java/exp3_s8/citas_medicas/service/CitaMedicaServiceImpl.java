@@ -1,4 +1,4 @@
-package exp3_s6.citas_medicas.service;
+package exp3_s8.citas_medicas.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import exp3_s6.citas_medicas.model.CitaMedica;
-import exp3_s6.citas_medicas.repository.CitaMedicaRepository;
+import exp3_s8.citas_medicas.model.CitaMedica;
+import exp3_s8.citas_medicas.repository.CitaMedicaRepository;
 
 @Service
 public class CitaMedicaServiceImpl implements CitaMedicaService {

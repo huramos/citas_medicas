@@ -1,0 +1,22 @@
+services:
+  app:
+    image: app-citas-medicas
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:oracle:thin:@u2xj61ge26mmmu70_tp?TNS_ADMIN=/app/wallet
+      - SPRING_DATASOURCE_USERNAME=CITAS_MEDICAS
+      - SPRING_DATASOURCE_PASSWORD=Cime....2024
+      - SPRING_DATASOURCE_DRIVER_CLASS_NAME=oracle.jdbc.driver.OracleDriver
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=none
+      - SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT=org.hibernate.dialect.OracleDialect
+      - SPRING_JPA_SHOW_SQL=true
+      - TNS_ADMIN=/app/wallet
+    networks:
+      - default
+
+networks:
+  default:
+    driver: bridge

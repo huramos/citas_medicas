@@ -1,4 +1,4 @@
-package exp3_s6.citas_medicas.model;
+package exp3_s8.citas_medicas.model;
 
 import org.springframework.hateoas.RepresentationModel;
 
@@ -8,34 +8,43 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Builder
 
 @Entity
-@Table(name = "hora_medica")
-public class HoraMedica extends RepresentationModel<HoraMedica> {
+@Table(name = "cita_medica")
+public class CitaMedica extends RepresentationModel<CitaMedica> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idHoraMedica")
-    private Long idHoraMedica;
-    @Size(max=10)
+    @Column(name = "idCita")
+    private Long idCita;
+    @Size(max = 10)
     @NotBlank(message = "No puede ingresar una fecha vacia")
     @Column(name = "fechaCita")
     private String fechaCita;
-    @Size(max=5)
+    @Size(max = 5)
     @NotBlank(message = "No puede ingresar una hora vacia")
     @Column(name = "horaCita")
     private String horaCita;
-    @Size(max=20)
-    @NotBlank(message = "No puede ingresar una disponibilidad vacia")
-    @Column(name = "disponibilidad")
-    private String disponibilidad;
+    @NotBlank(message = "No puede ingresar un nombre vacio")
+    @Column(name = "nombrePaciente")
+    private String nombrePaciente;
 
-    public Long getIdHoraMedica() {
-        return idHoraMedica;
+    public Long getIdCita() {
+        return idCita;
     }
 
-    public void setIdHoraMedica(Long idHoraMedica) {
-        this.idHoraMedica = idHoraMedica;
+    public void setIdCita(Long idCita) {
+        this.idCita = idCita;
     }
 
     public String getFechaCita() {
@@ -54,12 +63,12 @@ public class HoraMedica extends RepresentationModel<HoraMedica> {
         this.horaCita = horaCita;
     }
 
-    public String getDisponibilidad() {
-        return disponibilidad;
+    public String getNombrePaciente() {
+        return nombrePaciente;
     }
 
-    public void setDisponibilidad(String disponibilidad) {
-        this.disponibilidad = disponibilidad;
+    public void setNombrePaciente(String nombrePaciente) {
+        this.nombrePaciente = nombrePaciente;
     }
 
 }

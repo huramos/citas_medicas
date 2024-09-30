@@ -1,4 +1,4 @@
-package exp3_s6.citas_medicas;
+package exp3_s8.citas_medicas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
