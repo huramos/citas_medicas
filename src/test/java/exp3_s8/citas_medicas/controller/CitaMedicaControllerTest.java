@@ -37,7 +37,7 @@ public class CitaMedicaControllerTest {
     void setUp() {
         citaMedica = new CitaMedica();
         citaMedica.setIdCita(1L);
-        citaMedica.setFechaCita("2024-09-30s");
+        citaMedica.setFechaCita("2024-09-30");
         citaMedica.setHoraCita("10:30");
         citaMedica.setNombrePaciente("Hugo Ramos");
 
